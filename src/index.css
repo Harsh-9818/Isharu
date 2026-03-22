@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'texture';
+  src: url('./assets/fonts/texturefont3.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-texture {
+  font-family: 'texture', sans-serif;
+}
+
+
+html, body {
+  height: 100%;
+  
+}
+
