@@ -11,7 +11,6 @@ const Navbar = () => {
   const handleScroll = (e, id) => {
     e.preventDefault();
 
-    // INTERCEPT CONTACT: Scroll to absolute bottom for the reveal effect
     if (id === 'contact-section') {
       window.scrollTo({
         top: document.documentElement.scrollHeight,
@@ -43,21 +42,31 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-fit px-4">
-      <div className="flex items-center bg-black/90 backdrop-blur-md px-6 md:px-10 py-3 rounded-full border border-white shadow-2xl">
-        <ul className="flex items-center gap-6 md:gap-10">
-          {navLinks.map((link) => (
-            <li key={link.name}>
-              <button
-                onClick={(e) => handleScroll(e, link.targetId)}
-                className="text-gray-400 hover:text-white transition-all text-[10px] md:text-sm font-black uppercase tracking-widest active:scale-90 cursor-pointer outline-none whitespace-nowrap"
-              >
-                {link.name}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full flex justify-center px-4">
+      <ul className="font-texture flex items-center gap-2 md:gap-4">
+        {navLinks.map((link) => (
+          <li key={link.name}>
+            <button
+              onClick={(e) => handleScroll(e, link.targetId)}
+              className="
+                /* Typography - INCREASED FONT SIZES ONLY */
+                text-gray-600 transition-all text-md md:text-lg font-black uppercase tracking-widest 
+                
+                /* Layout & Shape */
+                px-4 py-2 rounded-xl border border-transparent 
+                
+                /* Hover States */
+                hover:text-white hover:bg-red-600 hover:border-black 
+                
+                /* Interaction */
+                active:scale-90 cursor-pointer outline-none whitespace-nowrap
+              "
+            >
+              {link.name}
+            </button>
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 };

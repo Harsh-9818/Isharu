@@ -2,74 +2,170 @@ import React from 'react';
 
 const AboutSection = () => {
   const profileData = {
-    experience: [
-      { year: "2024 - Present", role: "Lead Video Editor", client: "High-Tier YouTube Creators" },
-      { year: "2023 - 2024", role: "VFX Specialist", client: "Atelier Web Services" },
-      { year: "2021 - 2023", role: "Freelance Motion Designer", client: "International Brand Campaigns" },
-    ],
+    experience: {
+      year: "2023 – Present",
+      role: "Freelance Video Editor",
+      description: "started in 2023, still going. no plans to stop anytime soon."
+    },
     achievements: [
-      { year: "2024", title: "100M+ Cumulative Views", description: "Edited viral long-form content for top 1% creators." },
-      { year: "2023", title: "Best Visual Storytelling", description: "Awarded for 'Twisted' project edit sequence." },
+      { label: "20M+ Views", sub: "" },
+      { label: "Worked with 100+ Clients", sub: "from all over the place" },
+      { label: "500+ videos edited", sub: "" }
     ],
-    skills: [
-      "Advanced Narrative Editing", "Color Grading (LOG/Rec.709)", "Sound Design & Mixing", 
-      "2D/3D Motion Graphics", "Visual Effects (VFX)", "High-Retention Hook Design"
+    skills: "Funny & Reaction Editing, Long-form & Short-form, Pacing, Sound Design, Motion Graphics, making your content actually watchable",
+    languages: [
+      { name: "English", note: "fluent, surprisingly" },
+      { name: "Hindi", note: "native, unfortunately" }
+    ],
+    programs: [
+      { name: 'Pr', level: 5 },
+      { name: 'Ps', level: 4 },
+      { name: 'Ae', level: 3 },
+      { name: 'Dr', level: 3 },
     ]
   };
 
   return (
-    <section id="about-section" className="relative z-20 bg-black min-h-screen py-24 px-6 md:px-16 font-sans">
+    <section id="about-section" className="relative z-20 bg-black min-h-screen py-24 px-6 md:px-16 font-sans text-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="relative mb-24 flex flex-col items-center justify-center w-full overflow-hidden py-10">
+        
+        {/* BACKGROUND WATERMARK */}
+        <div className="relative mb-32 flex flex-col items-center justify-center w-full py-10">
           <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[7rem] sm:text-[12rem] md:text-[18rem] font-black text-white/[0.03] uppercase select-none tracking-tighter italic whitespace-nowrap leading-none">
             ISHARU
           </span>
           <div className="relative z-10 text-center">
-            <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-none text-white italic">
+            <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-none italic">
               About <span className="text-red-600">Me.</span>
             </h1>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-16 items-start">
-          <div className="space-y-20">
-            <div className="max-w-2xl">
-              <p className="text-xl md:text-3xl font-bold text-white leading-tight uppercase italic tracking-tight">
-                I turn <span className="text-red-600">raw footage</span> into cinematic experiences. 
+        <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-20 items-start">
+          
+          {/* LEFT CONTENT AREA */}
+          <div className="space-y-24">
+            
+            {/* HERO TEXT - FIXED FOR SINGLE LINE ON MOBILE */}
+            <div className="max-w-4xl">
+              <p className="text-[1.35rem] sm:text-2xl md:text-4xl font-black leading-tight uppercase italic tracking-tighter whitespace-nowrap">
+                yo, i'm isharu.{' '}
+                <span className="relative inline-block px-4 sm:px-8">
+                  {/* PENCIL CIRCLE EFFECT */}
+                  <svg 
+                    viewBox="0 0 800 240" 
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[180%] pointer-events-none z-0"
+                  >
+                    <g filter="url(#pencil-roughness-about)">
+                      <path d="M770,120 C770,180 550,220 380,220 C150,220 30,180 40,110 C50,40 300,20 450,30 C650,45 785,80 765,135" stroke="white" strokeWidth="6" strokeLinecap="round" className="pencil-draw-path-1" />
+                      <path d="M740,140 C720,185 500,205 350,205 C120,205 50,165 60,105 C70,55 320,45 480,55 C640,65 750,100 730,150" stroke="#dc2626" strokeWidth="3" strokeLinecap="round" className="pencil-draw-path-2 opacity-80" />
+                    </g>
+                    <defs>
+                      <filter id="pencil-roughness-about">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" result="noise" />
+                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" />
+                      </filter>
+                    </defs>
+                  </svg>
+                  <span className="text-red-600 relative z-10 whitespace-nowrap lowercase">i edit videos</span>
+                </span>
               </p>
-              <p className="mt-6 text-lg text-zinc-400 font-medium leading-relaxed">
-                Specializing in high-retention editing and advanced VFX, I help creators and brands dominate the digital landscape.
+              
+              <p className="mt-10 text-lg md:text-xl text-zinc-400 font-bold leading-relaxed max-w-2xl lowercase">
+                i make funny and reaction videos that slap harder than your alarm on a monday, 
+                the kind of edits where viewers forget they have a life outside youtube. 
+                if your content is boring, that's a you problem — but lucky for you, i fix those :)
               </p>
             </div>
 
-            <div>
-              <h2 className="text-3xl md:text-5xl font-black uppercase mb-10 italic text-white flex items-center gap-4">
-                <span className="w-12 h-1 bg-red-600"></span> Experience
-              </h2>
-              <div className="space-y-10">
-                {profileData.experience.map((exp, i) => (
-                  <div key={i} className="group relative pl-8 border-l border-zinc-800 hover:border-red-600 transition-colors">
-                    <div className="absolute left-[-5px] top-0 w-2 h-2 rounded-full bg-red-600"></div>
-                    <span className="text-xs font-black text-red-600 uppercase tracking-widest">{exp.year}</span>
-                    <h3 className="text-xl md:text-2xl font-black text-white uppercase mt-1">{exp.role}</h3>
-                    <p className="text-zinc-500 font-medium text-lg uppercase tracking-tight">{exp.client}</p>
-                  </div>
-                ))}
+            {/* THE CV GRID */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16">
+              
+              {/* EXPERIENCE */}
+              <div className="space-y-6">
+                <h2 className="text-2xl font-black text-red-600 uppercase italic tracking-tighter">Experience</h2>
+                <div className="space-y-1">
+                  <p className="font-black text-xl tracking-tighter">2023 – PRESENT</p>
+                  <p className="font-black text-md uppercase text-white">Freelance Video Editor</p>
+                  <p className="text-zinc-500 font-bold lowercase text-lg leading-snug">
+                    {profileData.experience.description}
+                  </p>
+                </div>
               </div>
+
+              {/* ACHIEVEMENTS */}
+              <div className="space-y-6">
+                <h2 className="text-2xl font-black text-red-600 uppercase italic tracking-tighter">Achievements</h2>
+                <div className="space-y-5">
+                  {profileData.achievements.map((ach, idx) => (
+                    <div key={idx} className="leading-tight">
+                      <p className="text-xl font-black uppercase tracking-tighter">{ach.label}</p>
+                      {ach.sub && <p className="text-zinc-500 font-bold lowercase italic text-base">{ach.sub}</p>}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* SKILLS */}
+              <div className="space-y-6">
+                <h2 className="text-2xl font-black text-red-600 uppercase italic tracking-tighter">Skills</h2>
+                <p className="text-white font-bold text-xl leading-relaxed italic lowercase">
+                  {profileData.skills}
+                </p>
+              </div>
+
+              {/* LANGUAGES */}
+              <div className="space-y-6">
+                <h2 className="text-2xl font-black text-red-600 uppercase italic tracking-tighter">Languages</h2>
+                <div className="space-y-3 font-black uppercase">
+                  {profileData.languages.map((lang, idx) => (
+                    <p key={idx} className="text-xl tracking-tighter leading-none">
+                      {lang.name} <span className="text-zinc-500 font-bold lowercase italic text-lg">— {lang.note}</span>
+                    </p>
+                  ))}
+                </div>
+              </div>
+
+              {/* PROGRAMS */}
+              <div className="md:col-span-2 space-y-8">
+                <h2 className="text-2xl font-black text-red-600 uppercase italic tracking-tighter">Programs</h2>
+                <div className="flex flex-wrap gap-8 items-start">
+                  {profileData.programs.map((prog) => (
+                    <div key={prog.name} className="flex flex-col items-center gap-4">
+                      <div className="w-16 h-16 md:w-20 md:h-20 border-2 border-white flex items-center justify-center font-black text-2xl md:text-3xl bg-black rounded-xl shadow-[4px_4px_0_white]">
+                        {prog.name}
+                      </div>
+                      <div className="flex flex-col gap-1.5">
+                        {[...Array(prog.level)].map((_, i) => (
+                          <span key={i} className="text-red-600 text-sm">✦</span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
             </div>
           </div>
 
-          <div className="sticky top-24 flex justify-center lg:justify-end">
-            <div className="relative group">
-              <div className="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-red-600 transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1"></div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-red-600 transition-transform group-hover:translate-x-1 group-hover:translate-y-1"></div>
-              <div className="relative z-10 w-full max-w-[400px] aspect-[4/5] bg-zinc-900 rounded-lg overflow-hidden border-2 border-white/10 shadow-[20px_20px_0_rgba(220,38,38,0.2)]">
-                <img src="/src/assets/images/anime2.png" alt="Isharu Portrait" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
-              </div>
-            </div>
+          {/* RIGHT SIDE IMAGE */}
+          <div className="flex justify-center lg:justify-end lg:sticky lg:top-32 pointer-events-none">
+            <img 
+              src="src/assets/images/about.png" 
+              alt="Isharu" 
+              className="w-full max-w-[480px] h-auto object-cover opacity-90 filter contrast-125" 
+            />
           </div>
         </div>
       </div>
+
+      <style>{`
+        .pencil-draw-path-1 { stroke-dasharray: 5000; stroke-dashoffset: 5000; animation: draw-pencil 1.5s cubic-bezier(0.45, 0, 0.55, 1) forwards; }
+        .pencil-draw-path-2 { stroke-dasharray: 5000; stroke-dashoffset: 5000; animation: draw-pencil 1.7s cubic-bezier(0.45, 0, 0.55, 1) 0.2s forwards; }
+        @keyframes draw-pencil { to { stroke-dashoffset: 0; } }
+      `}</style>
     </section>
   );
 };

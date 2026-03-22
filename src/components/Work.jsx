@@ -4,20 +4,20 @@ const projects = [
   {
     author: "Twisted",
     quote: "“I want to get the whole team to edit like this. It’s a perfectly edited video start to finish”",
-    videoUrl: "https://youtu.be/YFNSDdrElfc?si=SbrqDK-1UdMLbBHC",
-    logo: "/src/assets/images/Atelier_logo.png",
+    videoUrl: "https://www.youtube.com/watch?v=RURpFPGc7Eg&t=1s",
+    logo: "/src/assets/images/twisted.jpg",
   },
   {
     author: "BAIFIELD",
     quote: "“Omg just watched the vid ITS SO GOOD your work is honestly insane dude thanks so much, I can't wait to commission you again!”",
-    videoUrl: "https://youtu.be/PyRImZifI3k?si=YDs7a_SLJI2lQMNq",
-    logo: "/src/assets/images/Atelier_logo.png",
+    videoUrl: "https://www.youtube.com/watch?v=e-lJUpMeXDw",
+    logo: "/src/assets/images/baifield.jpg",
   },
   {
     author: "ErenSirDontCompareIt",
     quote: "“Legit one of the cleanest edits I've ever seen, you got crazy talent man.”",
-    videoUrl: "https://youtu.be/FIGYLl66MZI?si=zOCEedQNzBpY4dmi",
-    logo: "/src/assets/images/Atelier_logo.png",
+    videoUrl: "https://www.youtube.com/watch?v=EHfYhgA7I_0",
+    logo: "/src/assets/images/channel3.jpg",
   },
 ];
 

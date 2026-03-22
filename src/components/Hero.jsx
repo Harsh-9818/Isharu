@@ -1,7 +1,7 @@
 import React from 'react';
+import isharuLogo from '../assets/images/isharu3.png'; 
 
 const HeroSection = () => {
-  // Function to handle the scroll specifically for the Reveal/Footer layout
   const scrollToContact = () => {
     window.scrollTo({
       top: document.documentElement.scrollHeight,
@@ -26,10 +26,10 @@ const HeroSection = () => {
         
         {/* LEFT CONTENT */}
         <div className="flex flex-col items-start space-y-8 order-1 lg:order-1 pb-12 lg:pb-0">
-          <div className="space-y-2 relative">
+          <div className="space-y-2 relative w-full">
               
-              {/* INTEGRATED RENDERING BAR EFFECT */}
-              <div className="flex flex-col items-start gap-2 mb-2">
+              {/* RENDERING BAR */}
+              <div className="flex flex-col items-start gap-2 mb-6">
                 <span className="bg-red-600 text-white px-4 py-1 text-xs font-black uppercase tracking-[0.3em] rounded-sm shadow-[4px_4px_0_rgba(255,255,255,0.2)]">
                   Creative Studio
                 </span>
@@ -39,12 +39,16 @@ const HeroSection = () => {
                 <span className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">Rendering_Shot_04...</span>
               </div>
 
-              <div className="relative inline-block mt-4">
-                <svg 
+              {/* IMAGE + PENCIL CIRCLE CONTAINER */}
+              <div className="relative inline-block w-full max-w-[500px] lg:max-w-[650px] mt-4">
+                
+                {/* THE PENCIL CIRCLE - REDUCED SIZE */}
+                {/* scale-75 or scale-80 makes the ring smaller relative to the logo */}
+                {/* <svg 
                   viewBox="0 0 800 300" 
                   fill="none" 
                   xmlns="http://www.w3.org/2000/svg"
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[115%] h-[150%] pointer-events-none z-20"
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[105%] h-[130%] pointer-events-none z-20 scale-[1.32] rotate-[7deg]"
                 >
                   <g filter="url(#pencil-roughness)">
                     <path 
@@ -75,11 +79,14 @@ const HeroSection = () => {
                       <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" />
                     </filter>
                   </defs>
-                </svg>
+                </svg> */}
 
-                <h1 className="text-8xl md:text-[10rem] font-black uppercase tracking-tighter leading-[0.85] text-white italic relative z-10">
-                  Ish<span className="text-red-600">aru.</span>
-                </h1>
+                {/* THE LOGO IMAGE */}
+                <img 
+                  src={isharuLogo} 
+                  alt="Isharu" 
+                  className="w-full h-auto object-contain relative z-10 drop-shadow-[0_5px_15px_rgba(220,38,38,0.2)]"
+                />
               </div>
           </div>
 
@@ -92,7 +99,6 @@ const HeroSection = () => {
             </p>
           </div>
 
-          {/* UPDATED CLICK HANDLER HERE */}
           <button 
             onClick={scrollToContact}
             className="group relative bg-white text-black px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-lg shadow-[8px_8px_0_#dc2626] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all active:scale-95"
@@ -103,7 +109,7 @@ const HeroSection = () => {
 
         {/* RIGHT CONTENT (Mascot) */}
         <div className="relative flex justify-center items-center order-2 lg:order-2 lg:translate-x-12 mb-16 lg:mb-0">
-          <div className="relative z-10 w-full max-w-[350px] md:max-w-[450px] drop-shadow-[20px_20px_0_rgba(220,38,38,0.3)] transition-all duration-500">
+          <div className="relative z-10 w-full max-w-[320px] md:max-w-[450px] drop-shadow-[20px_20px_0_rgba(220,38,38,0.3)]">
             <img 
               src="/src/assets/images/anime4.png" 
               alt="Isharu Mascot" 
@@ -115,22 +121,6 @@ const HeroSection = () => {
       </div>
 
       <style>{`
-        @keyframes grain {
-          0%, 100% { transform: translate(0, 0) }
-          10% { transform: translate(-5%, -10%) }
-          30% { transform: translate(3%, -15%) }
-          50% { transform: translate(12%, 9%) }
-          70% { transform: translate(-3%, 11%) }
-          90% { transform: translate(-11%, 1%) }
-        }
-        .animate-grain { animation: grain 8s steps(10) infinite; }
-
-        @keyframes render {
-          0% { transform: translateX(-100%); }
-          50% { transform: translateX(0%); }
-          100% { transform: translateX(100%); }
-        }
-
         .pencil-path-1 {
           stroke-dasharray: 3000;
           stroke-dashoffset: 3000;
@@ -146,8 +136,25 @@ const HeroSection = () => {
           stroke-dashoffset: 100;
           animation: draw 0.5s ease-out 1.3s forwards;
         }
+
         @keyframes draw {
           to { stroke-dashoffset: 0; }
+        }
+
+        @keyframes grain {
+          0%, 100% { transform: translate(0, 0) }
+          10% { transform: translate(-5%, -10%) }
+          30% { transform: translate(3%, -15%) }
+          50% { transform: translate(12%, 9%) }
+          70% { transform: translate(-3%, 11%) }
+          90% { transform: translate(-11%, 1%) }
+        }
+        .animate-grain { animation: grain 8s steps(10) infinite; }
+
+        @keyframes render {
+          0% { transform: translateX(-100%); }
+          50% { transform: translateX(0%); }
+          100% { transform: translateX(100%); }
         }
       `}</style>
     </section>
