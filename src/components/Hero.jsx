@@ -1,7 +1,7 @@
 import React from 'react';
 import isharuLogo from '../assets/images/isharu4.png'; 
 import anime5 from '../assets/images/anime5.png'; 
-import paperTear from '../assets/images/paper-tear.png'; 
+import paperTear from '../assets/images/paper-tear3.png'; 
 
 const HeroSection = () => {
   const scrollToContact = () => {
