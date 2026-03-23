@@ -1,5 +1,9 @@
 import React from 'react';
 
+// ✅ ONLY ADDED THESE IMPORTS
+import aboutMeImg from '../assets/images/aboutme1.png';
+import aboutImg from '../assets/images/about.png';
+
 const AboutSection = () => {
   const profileData = {
     experience: {
@@ -26,19 +30,16 @@ const AboutSection = () => {
   };
 
   return (
-    /* UPDATED: Reduced section padding from py-24 to py-12 on desktop */
     <section id="about-section" className="relative z-20 bg-black min-h-screen py-12 md:py-16 px-6 md:px-16 font-sans text-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
-        {/* BACKGROUND WATERMARK & IMAGE HEADING */}
-        {/* UPDATED: Reduced margins and padding for tighter desktop layout */}
         <div className="relative mb-8 md:mb-16 flex flex-col items-center justify-center w-full py-4 md:py-6">
           <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[7rem] sm:text-[12rem] md:text-[18rem] font-black text-white/[0.03] uppercase select-none tracking-tighter italic whitespace-nowrap leading-none">
             ISHARU
           </span>
           <div className="relative z-10 text-center w-full px-4">
             <img 
-              src="src/assets/images/aboutme1.png" 
+              src={aboutMeImg}  // ✅ FIXED
               alt="About Me" 
               className="h-28 sm:h-48 md:h-64 lg:h-72 w-auto max-w-full object-contain mx-auto select-none pointer-events-none transform hover:scale-105 transition-transform duration-500" 
             />
@@ -83,7 +84,7 @@ const AboutSection = () => {
               </p>
             </div>
 
-            {/* THE CV GRID */}
+            {/* THE CV GRID (UNCHANGED ✅) */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12 md:gap-y-16">
               
               <div className="space-y-6">
@@ -151,7 +152,7 @@ const AboutSection = () => {
           {/* RIGHT SIDE IMAGE */}
           <div className="hidden lg:flex justify-center lg:justify-end lg:sticky lg:top-32 pointer-events-none">
             <img 
-              src="src/assets/images/about.png" 
+              src={aboutImg}  // ✅ FIXED
               alt="Isharu" 
               className="w-full max-w-[480px] h-auto object-cover opacity-90 filter contrast-125" 
             />

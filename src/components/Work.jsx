@@ -2,24 +2,29 @@ import React from 'react';
 // Correct way to import assets in a standard React/Vite project
 import dropImage from '../assets/images/drop.png';
 
+// ✅ FIX: import all logos properly
+import twistedLogo from '../assets/images/twisted.jpg';
+import baifieldLogo from '../assets/images/baifield.jpg';
+import channel3Logo from '../assets/images/channel3.jpg';
+
 const projects = [
   {
     author: "Twisted",
     quote: "“I want to get the whole team to edit like this. It’s a perfectly edited video start to finish”",
     videoUrl: "https://www.youtube.com/watch?v=RURpFPGc7Eg&t=1s",
-    logo: "/src/assets/images/twisted.jpg",
+    logo: twistedLogo, // ✅ FIXED
   },
   {
     author: "BAIFIELD",
     quote: "“Omg just watched the vid ITS SO GOOD your work is honestly insane dude thanks so much, I can't wait to commission you again!”",
     videoUrl: "https://www.youtube.com/watch?v=e-lJUpMeXDw",
-    logo: "/src/assets/images/baifield.jpg",
+    logo: baifieldLogo, // ✅ FIXED
   },
   {
     author: "ErenSirDontCompareIt",
     quote: "“Legit one of the cleanest edits I've ever seen, you got crazy talent man.”",
     videoUrl: "https://www.youtube.com/watch?v=EHfYhgA7I_0",
-    logo: "/src/assets/images/channel3.jpg",
+    logo: channel3Logo, // ✅ FIXED
   },
 ];
 
