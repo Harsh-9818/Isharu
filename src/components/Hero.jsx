@@ -18,9 +18,9 @@ const HeroSection = () => {
       <div className="absolute inset-0 pointer-events-none z-[60] opacity-[0.03] animate-grain bg-[url('https://www.transparenttextures.com/patterns/p6-dark.png')]"></div>
 
       {/* Background Watermark */}
-      <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15rem] md:text-[25rem] font-black text-white/[0.03] uppercase select-none tracking-tighter italic z-0 whitespace-nowrap">
+      {/* <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15rem] md:text-[25rem] font-black text-white/[0.03] uppercase select-none tracking-tighter italic z-0 whitespace-nowrap">
         ISHARU
-      </span>
+      </span> */}
 
       <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-10">
         
@@ -91,9 +91,9 @@ const HeroSection = () => {
           </div>
 
           <div className="max-w-md space-y-6">
-            <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight uppercase tracking-tight">
+            {/* <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight uppercase tracking-tight">
               Stand Out In Your Niche.
-            </h2>
+            </h2> */}
             <p className="text-lg text-zinc-400 font-medium leading-relaxed">
               Stop settling for "average" videos. Explode your growth with high-retention editing that actually works.
             </p>
@@ -103,7 +103,7 @@ const HeroSection = () => {
             onClick={scrollToContact}
             className="group relative bg-white text-black px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-lg shadow-[8px_8px_0_#dc2626] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all active:scale-95"
           >
-            Start Growing
+            Stand Out In Your Niche.
           </button>
         </div>
 

@@ -26,32 +26,35 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about-section" className="relative z-20 bg-black min-h-screen py-24 px-6 md:px-16 font-sans text-white overflow-hidden">
+    /* UPDATED: Reduced section padding from py-24 to py-12 on desktop */
+    <section id="about-section" className="relative z-20 bg-black min-h-screen py-12 md:py-16 px-6 md:px-16 font-sans text-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
-        {/* BACKGROUND WATERMARK */}
-        <div className="relative mb-32 flex flex-col items-center justify-center w-full py-10">
+        {/* BACKGROUND WATERMARK & IMAGE HEADING */}
+        {/* UPDATED: Reduced margins and padding for tighter desktop layout */}
+        <div className="relative mb-8 md:mb-16 flex flex-col items-center justify-center w-full py-4 md:py-6">
           <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[7rem] sm:text-[12rem] md:text-[18rem] font-black text-white/[0.03] uppercase select-none tracking-tighter italic whitespace-nowrap leading-none">
             ISHARU
           </span>
-          <div className="relative z-10 text-center">
-            <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-none italic">
-              About <span className="text-red-600">Me.</span>
-            </h1>
+          <div className="relative z-10 text-center w-full px-4">
+            <img 
+              src="src/assets/images/aboutme1.png" 
+              alt="About Me" 
+              className="h-28 sm:h-48 md:h-64 lg:h-72 w-auto max-w-full object-contain mx-auto select-none pointer-events-none transform hover:scale-105 transition-transform duration-500" 
+            />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-10 md:gap-20 items-start">
           
           {/* LEFT CONTENT AREA */}
-          <div className="space-y-24">
+          <div className="space-y-16 md:space-y-24">
             
-            {/* HERO TEXT - FIXED FOR SINGLE LINE ON MOBILE */}
+            {/* HERO TEXT */}
             <div className="max-w-4xl">
               <p className="text-[1.35rem] sm:text-2xl md:text-4xl font-black leading-tight uppercase italic tracking-tighter whitespace-nowrap">
                 yo, i'm isharu.{' '}
                 <span className="relative inline-block px-4 sm:px-8">
-                  {/* PENCIL CIRCLE EFFECT */}
                   <svg 
                     viewBox="0 0 800 240" 
                     fill="none" 
@@ -73,7 +76,7 @@ const AboutSection = () => {
                 </span>
               </p>
               
-              <p className="mt-10 text-lg md:text-xl text-zinc-400 font-bold leading-relaxed max-w-2xl lowercase">
+              <p className="mt-6 md:mt-10 text-lg md:text-xl text-zinc-400 font-bold leading-relaxed max-w-2xl lowercase">
                 i make funny and reaction videos that slap harder than your alarm on a monday, 
                 the kind of edits where viewers forget they have a life outside youtube. 
                 if your content is boring, that's a you problem — but lucky for you, i fix those :)
@@ -81,9 +84,8 @@ const AboutSection = () => {
             </div>
 
             {/* THE CV GRID */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12 md:gap-y-16">
               
-              {/* EXPERIENCE */}
               <div className="space-y-6">
                 <h2 className="text-2xl font-black text-red-600 uppercase italic tracking-tighter">Experience</h2>
                 <div className="space-y-1">
@@ -95,7 +97,6 @@ const AboutSection = () => {
                 </div>
               </div>
 
-              {/* ACHIEVEMENTS */}
               <div className="space-y-6">
                 <h2 className="text-2xl font-black text-red-600 uppercase italic tracking-tighter">Achievements</h2>
                 <div className="space-y-5">
@@ -108,7 +109,6 @@ const AboutSection = () => {
                 </div>
               </div>
 
-              {/* SKILLS */}
               <div className="space-y-6">
                 <h2 className="text-2xl font-black text-red-600 uppercase italic tracking-tighter">Skills</h2>
                 <p className="text-white font-bold text-xl leading-relaxed italic lowercase">
@@ -116,7 +116,6 @@ const AboutSection = () => {
                 </p>
               </div>
 
-              {/* LANGUAGES */}
               <div className="space-y-6">
                 <h2 className="text-2xl font-black text-red-600 uppercase italic tracking-tighter">Languages</h2>
                 <div className="space-y-3 font-black uppercase">
@@ -128,7 +127,6 @@ const AboutSection = () => {
                 </div>
               </div>
 
-              {/* PROGRAMS */}
               <div className="md:col-span-2 space-y-8">
                 <h2 className="text-2xl font-black text-red-600 uppercase italic tracking-tighter">Programs</h2>
                 <div className="flex flex-wrap gap-8 items-start">
@@ -151,7 +149,7 @@ const AboutSection = () => {
           </div>
 
           {/* RIGHT SIDE IMAGE */}
-          <div className="flex justify-center lg:justify-end lg:sticky lg:top-32 pointer-events-none">
+          <div className="hidden lg:flex justify-center lg:justify-end lg:sticky lg:top-32 pointer-events-none">
             <img 
               src="src/assets/images/about.png" 
               alt="Isharu" 

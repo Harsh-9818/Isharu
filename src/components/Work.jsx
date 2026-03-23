@@ -1,4 +1,6 @@
 import React from 'react';
+// Correct way to import assets in a standard React/Vite project
+import dropImage from '../assets/images/drop.png';
 
 const projects = [
   {
@@ -45,14 +47,18 @@ const WorkPage = () => {
 
       <div className="max-w-7xl mx-auto">
         <div className="relative mb-32 flex flex-col items-center justify-center text-center">
+          {/* Background Text */}
           <span className="absolute top-1/2 -translate-y-1/2 text-[8rem] md:text-[18rem] font-black text-white/[0.03] uppercase select-none tracking-tighter italic whitespace-nowrap">
             ISHARU
           </span>
+          
           <div className="relative z-10">
-            <h2 className="text-6xl md:text-9xl font-black uppercase leading-none text-white italic tracking-tighter">
-              MY <span className="text-red-600">WORK.</span>
-            </h2>
-            <div className="h-2 w-24 bg-red-600 mx-auto mt-4 rounded-full"></div>
+            {/* UPDATED: Increased size, no hover effect, and no red bar */}
+            <img 
+              src={dropImage} 
+              alt="The Drops" 
+              className="h-32 md:h-64 w-auto object-contain mx-auto"
+            />
           </div>
         </div>
 
@@ -64,6 +70,7 @@ const WorkPage = () => {
                 index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
               } items-center justify-between gap-16 group`}
             >
+              {/* Video Container */}
               <div className="w-full lg:w-[60%] aspect-video rounded-[2rem] overflow-hidden bg-zinc-900 border-2 border-white/10 transition-all duration-500 ease-out group-hover:border-red-600/50 group-hover:shadow-[0_0_50px_rgba(220,38,38,0.2)]">
                 <iframe
                   className="w-full h-full"
@@ -74,6 +81,7 @@ const WorkPage = () => {
                 ></iframe>
               </div>
 
+              {/* Text/Testimonial Container */}
               <div className="w-full lg:w-[35%] flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
                 <div className="relative">
                    <div className="w-20 h-20 rounded-full border-2 border-red-600 p-1 bg-black transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12 overflow-hidden">
@@ -97,7 +105,7 @@ const WorkPage = () => {
                     {item.quote}
                   </p>
                   
-                  {/* UPDATED STARS: All 5 now filled with Red-600 */}
+                  {/* Red Stars */}
                   <div className="flex gap-1 mt-6 justify-center lg:justify-start">
                     {[...Array(5)].map((_, i) => (
                       <svg
