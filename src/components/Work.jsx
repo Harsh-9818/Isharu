@@ -1,8 +1,7 @@
 import React from 'react';
-// Correct way to import assets in a standard React/Vite project
-import dropImage from '../assets/images/drop.png';
+import dropImage from '../assets/images/drop2.png';
 
-// ✅ FIX: import all logos properly
+// Import all logos properly
 import twistedLogo from '../assets/images/twisted.jpg';
 import baifieldLogo from '../assets/images/baifield.jpg';
 import channel3Logo from '../assets/images/channel3.jpg';
@@ -12,19 +11,19 @@ const projects = [
     author: "Twisted",
     quote: "“I want to get the whole team to edit like this. It’s a perfectly edited video start to finish”",
     videoUrl: "https://www.youtube.com/watch?v=RURpFPGc7Eg&t=1s",
-    logo: twistedLogo, // ✅ FIXED
+    logo: twistedLogo,
   },
   {
     author: "BAIFIELD",
     quote: "“Omg just watched the vid ITS SO GOOD your work is honestly insane dude thanks so much, I can't wait to commission you again!”",
     videoUrl: "https://www.youtube.com/watch?v=e-lJUpMeXDw",
-    logo: baifieldLogo, // ✅ FIXED
+    logo: baifieldLogo,
   },
   {
     author: "ErenSirDontCompareIt",
     quote: "“Legit one of the cleanest edits I've ever seen, you got crazy talent man.”",
     videoUrl: "https://www.youtube.com/watch?v=EHfYhgA7I_0",
-    logo: channel3Logo, // ✅ FIXED
+    logo: channel3Logo,
   },
 ];
 
@@ -39,7 +38,7 @@ const WorkPage = () => {
   return (
     <section
       id="work-section"
-      className="bg-black min-h-screen py-24 px-6 md:px-20 font-sans overflow-hidden"
+      className="bg-black min-h-screen py-8 px-6 md:px-20 font-sans overflow-hidden"
     >
       <svg width="0" height="0" className="absolute">
         <defs>
@@ -51,14 +50,8 @@ const WorkPage = () => {
       </svg>
 
       <div className="max-w-7xl mx-auto">
-        <div className="relative mb-32 flex flex-col items-center justify-center text-center">
-          {/* Background Text */}
-          <span className="absolute top-1/2 -translate-y-1/2 text-[8rem] md:text-[18rem] font-black text-white/[0.03] uppercase select-none tracking-tighter italic whitespace-nowrap">
-            ISHARU
-          </span>
-          
+        <div className="relative mb-32 mt-32 flex flex-col items-center justify-center text-center">
           <div className="relative z-10">
-            {/* UPDATED: Increased size, no hover effect, and no red bar */}
             <img 
               src={dropImage} 
               alt="The Drops" 
@@ -75,47 +68,58 @@ const WorkPage = () => {
                 index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
               } items-center justify-between gap-16 group`}
             >
-              {/* Video Container */}
-              <div className="w-full lg:w-[60%] aspect-video rounded-[2rem] overflow-hidden bg-zinc-900 border-2 border-white/10 transition-all duration-500 ease-out group-hover:border-red-600/50 group-hover:shadow-[0_0_50px_rgba(220,38,38,0.2)]">
-                <iframe
-                  className="w-full h-full"
-                  src={getEmbedUrl(item.videoUrl)}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allowFullScreen
-                ></iframe>
+              
+              {/* VIDEO CONTAINER WITH AMBIENT RED SHADOW ONLY */}
+              <div className="w-full lg:w-[60%] relative">
+                
+                {/* 1. LARGE BACKGROUND SOFT GLOW */}
+                <div className="absolute -inset-10 bg-red-600/15 blur-[100px] rounded-full opacity-0 group-hover:opacity-100 transition-all duration-1000 ease-in-out pointer-events-none"></div>
+                
+                {/* 2. TIGHTER INTENSE GLOW (Shadow Replacement) */}
+                <div className="absolute -inset-4 bg-red-500/25 blur-[30px] rounded-[3rem] opacity-0 group-hover:opacity-100 transition-all duration-700 ease-out pointer-events-none"></div>
+
+                {/* THE ACTUAL VIDEO BOX (Border remains subtle white/10) */}
+                <div className="relative z-10 aspect-video rounded-[1.5rem] md:rounded-[2rem] overflow-hidden bg-zinc-900 border-2 border-white/10 transition-all duration-500 ease-out group-hover:scale-[1.01]">
+                  <iframe
+                    className="w-full h-full"
+                    src={getEmbedUrl(item.videoUrl)}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allowFullScreen
+                  ></iframe>
+                </div>
               </div>
 
-              {/* Text/Testimonial Container */}
-              <div className="w-full lg:w-[35%] flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
+              {/* TEXT/TESTIMONIAL CONTAINER */}
+              <div className="w-full lg:w-[35%] flex flex-col items-center text-center space-y-6">
+                
                 <div className="relative">
-                   <div className="w-20 h-20 rounded-full border-2 border-red-600 p-1 bg-black transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12 overflow-hidden">
+                   <div className="w-24 h-24 rounded-full border-2 border-red-600 p-1 bg-black transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12 overflow-hidden shadow-lg">
                     <img
                       src={item.logo}
                       alt="client logo"
-                      className="w-full h-full rounded-full object-cover grayscale group-hover:grayscale-0 transition-all"
+                      className="w-full h-full rounded-full object-cover grayscale-0 md:grayscale group-hover:grayscale-0 transition-all duration-500"
                     />
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <h3 className="text-red-600 font-black text-3xl tracking-tighter uppercase italic">
+                <div className="space-y-2 flex flex-col items-center w-full">
+                  <h3 className="font-texture text-red-600 font-black text-5xl uppercase tracking-wider">
                     {item.author}
                   </h3>
-                  <div className="h-1 w-12 bg-white/20 group-hover:w-full transition-all duration-500"></div>
+                  <div className="h-1 w-12 bg-red-600/40 group-hover:w-32 transition-all duration-500"></div>
                 </div>
 
-                <div className="relative bg-zinc-900/50 border border-white/10 rounded-[2rem] p-8 transition-all duration-300 group-hover:-translate-y-2 group-hover:bg-zinc-900 group-hover:border-red-600/30 shadow-[10px_10px_0_rgba(220,38,38,0.2)]">
-                  <p className="text-zinc-300 font-medium text-xl leading-relaxed italic">
+                <div className="relative transition-all duration-300 group-hover:-translate-y-2">
+                  <p className="text-zinc-300 font-medium text-xl md:text-2xl leading-relaxed italic max-w-sm">
                     {item.quote}
                   </p>
                   
-                  {/* Red Stars */}
-                  <div className="flex gap-1 mt-6 justify-center lg:justify-start">
+                  <div className="flex gap-1 mt-6 justify-center">
                     {[...Array(5)].map((_, i) => (
                       <svg
                         key={i}
-                        className="w-6 h-6 transition-all duration-500 group-hover:scale-125 group-hover:rotate-[15deg]"
+                        className="w-6 h-6 transition-all duration-500 group-hover:scale-150 group-hover:rotate-[15deg]"
                         style={{
                           fill: "#dc2626", 
                           filter: "url(#pencil-texture)",
@@ -129,6 +133,7 @@ const WorkPage = () => {
                   </div>
                 </div>
               </div>
+
             </div>
           ))}
         </div>

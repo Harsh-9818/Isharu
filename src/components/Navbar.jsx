@@ -56,7 +56,7 @@ const Navbar = () => {
                 px-4 py-2 rounded-xl border border-transparent 
                 
                 /* Hover States */
-                hover:text-white hover:bg-red-600 hover:border-black 
+                hover:text-white hover:bg-red-800 hover:border-black 
                 
                 /* Interaction */
                 active:scale-90 cursor-pointer outline-none whitespace-nowrap

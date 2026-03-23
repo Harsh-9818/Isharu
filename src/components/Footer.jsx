@@ -8,21 +8,15 @@ const ContactPage = () => {
     { name: "Email", href: "mailto:isharuuuu@gmail.com" },
   ];
 
-  const emailHref = "mailto:isharuuuu@gmail.com";
+  // Updated this to point to your X profile
+  const xProfileHref = "https://x.com/Isharuu";
 
   return (
     <section 
       id="contact-section" 
       className="relative w-full h-full bg-black text-white font-sans flex flex-col justify-between p-8 md:p-16 overflow-hidden"
     >
-      {/* Background Watermark - CENTERED X-AXIS ONLY */}
-      <div className="absolute bottom-[-5%] left-1/2 -translate-x-1/2 pointer-events-none select-none z-0 opacity-[0.02] whitespace-nowrap">
-        <h3 className="text-[10rem] md:text-[20rem] font-black uppercase italic tracking-tighter">
-          ISHARU
-        </h3>
-      </div>
-
-      <nav className="relative z-20 flex justify-end gap-6 md:gap-10 mt-20 md:mt-0">
+      <nav className="font-texture relative z-20 flex justify-end gap-6 md:gap-10 mt-25 md:mt-0">
         {navLinks.map((link) => (
           <a 
             key={link.name} 
@@ -49,7 +43,9 @@ const ContactPage = () => {
 
         <div className="mt-10 flex flex-col md:flex-row items-start md:items-center gap-8">
           <a 
-            href={emailHref}
+            href={xProfileHref}
+            target="_blank" 
+            rel="noopener noreferrer"
             className="bg-white text-black px-8 py-3 rounded-sm font-bold text-[10px] uppercase tracking-widest hover:bg-red-600 hover:text-white transition-all duration-300 inline-block text-center"
           >
             Get in Touch
