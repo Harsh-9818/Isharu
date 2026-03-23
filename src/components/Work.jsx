@@ -104,7 +104,8 @@ const WorkPage = () => {
                 </div>
 
                 <div className="space-y-2 flex flex-col items-center w-full">
-                  <h3 className="font-texture text-red-600 font-black text-5xl uppercase tracking-wider">
+                  {/* FIXED: Keeps 5xl for desktop, uses 4xl + break-all for mobile */}
+                  <h3 className="font-texture text-red-600 font-black text-4xl md:text-5xl uppercase tracking-wider break-all md:break-normal w-full px-2">
                     {item.author}
                   </h3>
                   <div className="h-1 w-12 bg-red-600/40 group-hover:w-32 transition-all duration-500"></div>
