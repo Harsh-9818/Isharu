@@ -1,5 +1,6 @@
 import React from 'react';
 import isharuLogo from '../assets/images/isharu3.png'; 
+import anime4 from '../assets/images/anime4.png'; // ✅ ADDED
 
 const HeroSection = () => {
   const scrollToContact = () => {
@@ -111,7 +112,7 @@ const HeroSection = () => {
         <div className="relative flex justify-center items-center order-2 lg:order-2 lg:translate-x-12 mb-16 lg:mb-0">
           <div className="relative z-10 w-full max-w-[320px] md:max-w-[450px] drop-shadow-[20px_20px_0_rgba(220,38,38,0.3)]">
             <img 
-              src="/src/assets/images/anime4.png" 
+              src={anime4}  // ✅ ONLY CHANGE HERE
               alt="Isharu Mascot" 
               className="w-full h-auto object-contain transform -scale-x-100 hover:scale-105 hover:-scale-x-105 transition-transform duration-500"
             />
