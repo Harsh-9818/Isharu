@@ -8,7 +8,6 @@ const ContactPage = () => {
     { name: "Email", href: "mailto:isharuuuu@gmail.com" },
   ];
 
-  // Updated this to point to your X profile
   const xProfileHref = "https://x.com/Isharuu";
 
   return (
@@ -16,18 +15,22 @@ const ContactPage = () => {
       id="contact-section" 
       className="relative w-full h-full bg-black text-white font-sans flex flex-col justify-between p-8 md:p-16 overflow-hidden"
     >
+      {/* Navigation Links */}
       <nav className="font-texture relative z-20 flex justify-end gap-6 md:gap-10 mt-25 md:mt-0">
         {navLinks.map((link) => (
           <a 
             key={link.name} 
             href={link.href} 
-            className="text-[10px] md:text-xs font-bold tracking-widest text-white/60 hover:text-red-600 transition-colors duration-300 uppercase"
+            target="_blank"             // Opens in new tab
+            rel="noopener noreferrer"   // Security best practice
+            className="text-[10px] md:text-xs font-bold tracking-widest text-white hover:text-red-600 transition-colors duration-300 uppercase"
           >
             {link.name}
           </a>
         ))}
       </nav>
 
+      {/* Hero Text Section */}
       <div className="relative z-10 flex flex-col items-start w-full max-w-6xl py-10 md:py-0">
         <h2 
           className="text-2xl md:text-4xl lg:text-[2.8rem] font-medium leading-[1.3] tracking-tight"
@@ -61,10 +64,11 @@ const ContactPage = () => {
         </div>
       </div>
 
+      {/* Footer Info */}
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 items-end pt-10 border-t border-white/5">
         <div className="flex flex-col gap-1">
           <p className="text-[9px] font-bold tracking-widest text-zinc-600 uppercase">Direct</p>
-          <p className="text-xs font-bold">isharuuuu@gmail.com</p>
+          <p className="text-xs font-bold text-white">isharuuuu@gmail.com</p>
         </div>
         <div className="flex flex-col md:items-center gap-1">
           <p className="text-[9px] text-zinc-600 uppercase tracking-widest">Designed & Developed</p>
@@ -72,7 +76,7 @@ const ContactPage = () => {
         </div>
         <div className="flex flex-col md:items-end gap-1">
           <p className="text-[9px] text-zinc-600 uppercase tracking-[0.2em]">Isharu © 2026</p>
-          <p className="text-[10px] font-bold uppercase tracking-tighter">All rights reserved</p>
+          <p className="text-[10px] font-bold uppercase tracking-tighter text-white">All rights reserved</p>
         </div>
       </div>
     </section>

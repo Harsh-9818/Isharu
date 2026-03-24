@@ -1,6 +1,6 @@
 import React from 'react';
 import aboutMeImg from '../assets/images/aboutme2.png';
-import aboutImg from '../assets/images/about.png';
+import aboutImg from '../assets/images/about2.png';
 import customIcon from '../assets/images/custom-icon.png';
 
 const AboutSection = () => {
@@ -8,7 +8,7 @@ const AboutSection = () => {
     experience: {
       year: "2023 – Present",
       role: "Freelance Video Editor",
-      description: "Started in 2023, still going. no plans to stop anytime soon."
+      description: "Started in 2023, still going. No plans to stop anytime soon."
     },
     achievements: [
       { label: "20M+ Views", sub: "" },
@@ -45,33 +45,24 @@ const AboutSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-10 md:gap-20 items-start">
           
-          {/* LEFT CONTENT AREA */}
           <div className="space-y-16 md:space-y-24 order-1">
             
-            {/* HERO TEXT */}
             <div className="max-w-4xl">
-              <p className="font-texture text-[1.35rem] sm:text-2xl md:text-7xl font-black uppercase whitespace-nowrap">
+              <p className="font-texture text-[7vw] md:text-7xl font-black uppercase whitespace-nowrap flex items-center md:block">
                 yo, i'm isharu{' '}
                 <span className="relative inline-block px-4 sm:px-8">
-                  {/* MULTI-RING SVG */}
+                  {/* FIXED SVG: The animation now includes the -50% centering */}
                   <svg 
                     viewBox="0 -8 800 270" 
                     fill="none" 
                     xmlns="http://www.w3.org/2000/svg"
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[180%] pointer-events-none z-20 transform rotate-[3deg]"
+                    className="absolute top-1/2 left-1/2 w-[110%] md:w-[140%] h-[180%] pointer-events-none z-20 ring-loop-centered"
                   >
                     <g filter="url(#pencil-roughness-about)">
-                      {/* Original White Path */}
-                      <path d="M770,120 C770,180 550,220 380,220 C150,220 30,180 40,110 C50,40 300,20 450,30 C650,45 785,80 765,135" stroke="white" strokeWidth="6" strokeLinecap="round" className="pencil-draw-path-1" />
-                      
-                      {/* Original Red Path */}
-                      <path d="M740,140 C720,185 500,205 350,205 C120,205 50,165 60,105 C70,55 320,45 480,55 C640,65 750,100 730,150" stroke="#dc2626" strokeWidth="3" strokeLinecap="round" className="pencil-draw-path-2 opacity-80" />
-                      
-                      {/* NEW: Third Offset Path (White) */}
-                      <path d="M750,110 C750,160 530,200 360,200 C130,200 10,160 20,90 C30,20 280,0 430,10 C630,25 765,60 745,115" stroke="white" strokeWidth="2" strokeLinecap="round" className="pencil-draw-path-3 opacity-40" />
-                      
-                      {/* NEW: Fourth Loose Path (Red) */}
-                      <path d="M780,130 C780,190 560,230 390,230 C160,230 40,190 50,120 C60,50 310,30 460,40 C660,55 795,90 775,145" stroke="#dc2626" strokeWidth="2" strokeLinecap="round" className="pencil-draw-path-4 opacity-60" />
+                      <path d="M770,120 C770,180 550,220 380,220 C150,220 30,180 40,110 C50,40 300,20 450,30 C650,45 785,80 765,135" stroke="white" strokeWidth="6" strokeLinecap="round" className="pencil-continuous-path" />
+                      <path d="M740,140 C720,185 500,205 350,205 C120,205 50,165 60,105 C70,55 320,45 480,55 C640,65 750,100 730,150" stroke="#dc2626" strokeWidth="3" strokeLinecap="round" className="pencil-continuous-path opacity-80" style={{animationDelay: '-0.5s'}} />
+                      <path d="M750,110 C750,160 530,200 360,200 C130,200 10,160 20,90 C30,20 280,0 430,10 C630,25 765,60 745,115" stroke="white" strokeWidth="2" strokeLinecap="round" className="pencil-continuous-path opacity-40" style={{animationDelay: '-1s'}} />
+                      <path d="M780,130 C780,190 560,230 390,230 C160,230 40,190 50,120 C60,50 310,30 460,40 C660,55 795,90 775,145" stroke="#dc2626" strokeWidth="2" strokeLinecap="round" className="pencil-continuous-path opacity-60" style={{animationDelay: '-1.5s'}} />
                     </g>
                     <defs>
                       <filter id="pencil-roughness-about">
@@ -80,29 +71,26 @@ const AboutSection = () => {
                       </filter>
                     </defs>
                   </svg>
-                  <span className="text-red-600 relative z-10 whitespace-nowrap lowercase md:text-6xl sm:text-xl text-[1.1rem]">
+                  <span className="text-red-600 relative z-10 whitespace-nowrap lowercase text-[6vw] md:text-6xl">
                     i edit videos
                   </span>
                 </span>
               </p>
               
-              <p className="mt-6 md:mt-10 text-lg md:text-xl text-[#D5C3AA] font-bold leading-relaxed max-w-2xl lowercase">
-                i make funny and reaction videos that slap harder than your alarm on a monday, 
+              <p className="mt-6 md:mt-10 text-lg md:text-xl text-[#D5C3AA] font-bold leading-relaxed max-w-2xl">
+                I make funny and reaction videos that slap harder than your alarm on a monday, 
                 the kind of edits where viewers forget they have a life outside youtube. 
-                if your content is boring, that's a you problem — but lucky for you, i fix those :)
+                If your content is boring, that's a you problem — but lucky for you, i fix those :)
               </p>
             </div>
 
-            {/* THE CV GRID */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12 md:gap-y-16">
               <div className="space-y-6">
                 <h2 className="font-texture text-4xl font-black text-red-600 uppercase">Experience</h2>
                 <div className="space-y-1">
                   <p className="font-black text-xl tracking-tighter text-[#D5C3AA]">2023 – PRESENT</p>
                   <p className="font-black text-md uppercase text-[#D5C3AA]">Freelance Video Editor</p>
-                  <p className="text-[#D5C3AA] font-bold text-lg leading-snug">
-                    {profileData.experience.description}
-                  </p>
+                  <p className="text-[#D5C3AA] font-bold text-lg leading-snug">{profileData.experience.description}</p>
                 </div>
               </div>
 
@@ -120,9 +108,7 @@ const AboutSection = () => {
 
               <div className="space-y-6">
                 <h2 className="font-texture text-4xl font-black text-red-600 uppercase">Skills</h2>
-                <p className="text-[#D5C3AA] font-bold text-xl leading-relaxed">
-                  {profileData.skills}
-                </p>
+                <p className="text-[#D5C3AA] font-bold text-xl leading-relaxed">{profileData.skills}</p>
               </div>
 
               <div className="space-y-6">
@@ -136,7 +122,6 @@ const AboutSection = () => {
                 </div>
               </div>
 
-              {/* PROGRAMS SECTION */}
               <div className="md:col-span-2 space-y-8">
                 <h2 className="font-texture text-4xl font-black text-red-600 uppercase">Programs</h2>
                 <div className="flex flex-wrap gap-6 items-start">
@@ -164,7 +149,6 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* RIGHT SIDE IMAGE */}
           <div className="flex justify-center lg:justify-end lg:sticky lg:top-32 order-2 lg:order-2 mt-10 lg:mt-0 pointer-events-none">
             <img 
               src={aboutImg} 
@@ -177,11 +161,32 @@ const AboutSection = () => {
       </div>
 
       <style>{`
-        .pencil-draw-path-1 { stroke-dasharray: 5000; stroke-dashoffset: 5000; animation: draw-pencil 1.5s cubic-bezier(0.45, 0, 0.55, 1) forwards; }
-        .pencil-draw-path-2 { stroke-dasharray: 5000; stroke-dashoffset: 5000; animation: draw-pencil 1.7s cubic-bezier(0.45, 0, 0.55, 1) 0.2s forwards; }
-        .pencil-draw-path-3 { stroke-dasharray: 5000; stroke-dashoffset: 5000; animation: draw-pencil 1.3s cubic-bezier(0.45, 0, 0.55, 1) 0.4s forwards; }
-        .pencil-draw-path-4 { stroke-dasharray: 5000; stroke-dashoffset: 5000; animation: draw-pencil 1.9s cubic-bezier(0.45, 0, 0.55, 1) 0.1s forwards; }
-        @keyframes draw-pencil { to { stroke-dashoffset: 0; } }
+        /* Path Drawing Logic */
+        .pencil-continuous-path {
+          stroke-dasharray: 4000;
+          stroke-dashoffset: 4000;
+          animation: draw-continuous 3s linear infinite;
+        }
+
+        @keyframes draw-continuous {
+          0% { stroke-dashoffset: 4000; }
+          50% { stroke-dashoffset: 0; }
+          100% { stroke-dashoffset: -4000; }
+        }
+
+        /* SVG Jitter Logic - Now including the translate fix */
+        .ring-loop-centered {
+          animation: jitter-centered 0.4s linear infinite;
+          transform-origin: center;
+        }
+
+        @keyframes jitter-centered {
+          0% { transform: translate(-50%, -50%) rotate(3deg); }
+          25% { transform: translate(-50.5%, -49.5%) rotate(3.1deg); }
+          50% { transform: translate(-49.5%, -50.5%) rotate(2.9deg); }
+          75% { transform: translate(-50.2%, -50.2%) rotate(3.05deg); }
+          100% { transform: translate(-50%, -50%) rotate(3deg); }
+        }
       `}</style>
     </section>
   );
